@@ -83,7 +83,6 @@ def _buildx(docker_tag):
             "--push",
             "--platform",
             "linux/amd64,linux/arm64",
-            "linux/ppc64le",
             "--build-arg",
             f"MITMPROXY_WHEEL={whl.name}",
             ".",
