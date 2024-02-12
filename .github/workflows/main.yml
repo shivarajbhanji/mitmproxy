@@ -208,7 +208,7 @@ jobs:
 
   # Separate from everything else because slow.
   build-and-deploy-docker:
-    if: github.repository == 'mitmproxy/mitmproxy' && (
+    if: github.repository == 'shivarajbhanji/mitmproxy' && (
       github.ref == 'refs/heads/main'
       || github.ref == 'refs/heads/citest'
       || startsWith(github.ref, 'refs/tags/')
@@ -237,7 +237,7 @@ jobs:
   deploy:
     # This action has access to our AWS keys, so we are extra careful here.
     # In particular, we don't blindly `pip install` anything to minimize the risk of supply chain attacks.
-    if: github.repository == 'mitmproxy/mitmproxy' && (startsWith(github.ref, 'refs/heads/') || startsWith(github.ref, 'refs/tags/'))
+    if: github.repository == 'shivarajbhanji/mitmproxy' && (startsWith(github.ref, 'refs/heads/') || startsWith(github.ref, 'refs/tags/'))
     environment: ${{ (github.ref == 'refs/heads/citest' || startsWith(github.ref, 'refs/tags/')) && 'deploy-release' || 'deploy-snapshot' }}
     needs: check
     runs-on: ubuntu-latest
