@@ -59,17 +59,17 @@ print(r.stdout.decode())
 assert "Self-test successful" in r.stdout.decode()
 assert r.returncode == 0
 
-# Now we can deploy.
-subprocess.check_call(
-    [
-        "docker",
-        "login",
-        "-u",
-        os.environ["DOCKER_USERNAME"],
-        "-p",
-        os.environ["DOCKER_PASSWORD"],
-    ]
-)
+#  Now we can deploy.
+# subprocess.check_call(
+#     [
+#         "docker",
+#         "login",
+#         "-u",
+#         os.environ["DOCKER_USERNAME"],
+#         "-p",
+#         os.environ["DOCKER_PASSWORD"],
+#     ]
+# )
 
 
 def _buildx(docker_tag):
