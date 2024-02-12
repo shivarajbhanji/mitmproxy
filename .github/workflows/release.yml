@@ -9,8 +9,8 @@ on:
         type: string
       skip-branch-status-check:
         description: 'Skip CI status check.'
-        default: false
-        required: false
+        default: true
+        required: true
         type: boolean
 
 permissions:
