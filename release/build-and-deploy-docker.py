@@ -92,11 +92,11 @@ def _buildx(docker_tag):
 
 
 if branch == "main":
-    _buildx("mitmproxy/mitmproxy:dev")
+    _buildx("shivarajbhanji/mitmproxy:dev")
 elif branch == "citest":
-    _buildx("mitmproxy/mitmproxy:citest")
+    _buildx("shivarajbhanji/mitmproxy:citest")
 elif tag:
-    _buildx(f"mitmproxy/mitmproxy:{tag}")
-    _buildx("mitmproxy/mitmproxy:latest")
+    _buildx(f"shivarajbhanji/mitmproxy:{tag}")
+    _buildx("shivarajbhanji/mitmproxy:latest")
 else:
     raise AssertionError
